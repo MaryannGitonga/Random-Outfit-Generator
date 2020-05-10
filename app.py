@@ -23,6 +23,16 @@ class MyOutfitGenerator:
     def __init__(self, root):
         self.root = root
 
+        # collecting all clothes and shoes
+        self.top_images = ALL_TOPS
+        self.bottom_images = ALL_BOTTOMS
+        self.shoes_images = ALL_SHOES
+
+        # first pictures for top, bottom and shoes
+        self.tops_image_path = self.top_images[0]
+        self.bottoms_image_path = self.bottom_images[0]
+        self.shoes_image_path = self.shoes_images[0]
+
 
 
 if __name__ == '__main__':

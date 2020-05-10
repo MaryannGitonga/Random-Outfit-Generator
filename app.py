@@ -88,6 +88,15 @@ class MyOutfitGenerator:
         shoe_next_button = tk.Button(self.shoes_frame, text="Next", command=self.get_next_shoe)
         shoe_next_button.pack(side=tk.RIGHT)
 
+    def create_photo(self, image, frame):
+        top_image_file = Image.open(image)
+        image = top_image_file.resize((IMG_WIDTH, IMG_HEIGHT), Image.ANTIALIAS)
+        photo = ImageTk.PhotoImage(image)
+        image_label = tk.Label(frame, image=photo, anchor=tk.CENTER)
+        image_label.image = photo
+
+        return image_label
+
 
 
 if __name__ == '__main__':

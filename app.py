@@ -66,6 +66,28 @@ class MyOutfitGenerator:
         self.bottoms_frame.pack(fill=tk.BOTH, expand=tk.YES)
         self.shoes_frame.pack(fill=tk.BOTH, expand=tk.YES)
 
+    def create_buttons(self):
+        top_prev_button = tk.Button(self.tops_frame, text="Prev", command=self.get_prev_top)
+        top_prev_button.pack(side=tk.LEFT)
+
+        create_outfit_button = tk.Button(self.tops_frame, text="Create Outfit", command=self.create_outfit)
+        create_outfit_button.pack(side=tk.LEFT)
+
+        top_next_button = tk.Button(self.tops_frame, text="Next", command=self.get_next_top)
+        top_next_button.pack(side=tk.RIGHT)
+
+        bottom_prev_button = tk.Button(self.bottoms_frame, text="Prev", command=self.get_prev_bottom)
+        bottom_prev_button.pack(side=tk.LEFT)
+
+        bottom_next_button = tk.Button(self.bottoms_frame, text="Next", command=self.get_next_bottom)
+        bottom_next_button.pack(side=tk.RIGHT)
+
+        shoe_prev_button = tk.Button(self.shoes_frame, text="Prev", command=self.get_prev_shoe)
+        shoe_prev_button.pack(side=tk.LEFT)
+
+        shoe_next_button = tk.Button(self.shoes_frame, text="Next", command=self.get_next_shoe)
+        shoe_next_button.pack(side=tk.RIGHT)
+
 
 
 if __name__ == '__main__':

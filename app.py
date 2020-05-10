@@ -104,6 +104,63 @@ class MyOutfitGenerator:
         image_label.configure(image=photo)
         image_label.image = photo
 
+    def _get_next_item(self, current_item, category, increment=True):
+        """ Gets the next item in a category depending on if you hit next or prev
+
+        Args:
+            current_item, str
+            category, list
+            increment, boolean
+        """
+        item_index = category.index(current_item)
+        final_index = len(category) - 1
+        next_index = 0
+
+        if increment and item_index == final_index:
+            # cycle back to the beginning
+            next_index = 0
+        elif not increment and item_index == 0:
+            # cycle back to the end
+            next_index = final_index
+        else:
+            incrementer = 1 if increment else -1
+            next_index = item_index + incrementer
+
+        next_image = category[next_index]
+
+        # reset the image object
+        if current_item in self.top_images:
+            image_label = self.top_image_label
+            self.tops_image_path = next_image
+        elif current_item in self.bottom_images:
+            image_label = self.bottom_image_label
+            self.bottoms_image_path = next_image
+        elif current_item in self.shoes_images:
+            image_label = self.shoe_image_label
+            self.shoes_image_path = next_image
+
+        # update the photo
+        self.update_photo(next_image, image_label)
+
+    def get_next_top(self):
+        self._get_next_item(self.tops_image_path, self.top_images, increment=True)
+
+    def get_prev_top(self):
+        self._get_next_item(self.tops_image_path, self.top_images, increment=False)
+
+    def get_prev_bottom(self):
+        self._get_next_item(self.bottoms_image_path, self.bottom_images, increment=False)
+
+    def get_next_bottom(self):
+        self._get_next_item(self.bottoms_image_path, self.bottom_images, increment=True)
+
+    def get_prev_shoe(self):
+        self._get_next_item(self.shoes_image_path, self.shoes_images, increment=False)
+
+    def get_next_shoe(self):
+        self._get_next_item(self.shoes_image_path, self.shoes_images, increment=True)
+
+
 
 
 if __name__ == '__main__':

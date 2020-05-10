@@ -53,6 +53,19 @@ class MyOutfitGenerator:
         # create background
         self.create_background()
 
+    def create_background(self):
+        # add title to window and change the size
+        self.root.title(WINDOW_TITLE)
+        self.root.geometry('{0}x{1}'.format(WINDOW_WIDTH, WINDOW_HEIGHT))
+
+        # create buttons
+        self.create_buttons()
+
+        # add the initial clothes onto the screen
+        self.tops_frame.pack(fill=tk.BOTH, expand=tk.YES)
+        self.bottoms_frame.pack(fill=tk.BOTH, expand=tk.YES)
+        self.shoes_frame.pack(fill=tk.BOTH, expand=tk.YES)
+
 
 
 if __name__ == '__main__':

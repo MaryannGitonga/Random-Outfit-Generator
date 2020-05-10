@@ -33,6 +33,26 @@ class MyOutfitGenerator:
         self.bottoms_image_path = self.bottom_images[0]
         self.shoes_image_path = self.shoes_images[0]
 
+        # creating 3 frames
+        self.tops_frame = tk.Frame(self.root, bg=BEIGE_COLOR_HEX)
+        self.bottoms_frame = tk.Frame(self.root, bg=BEIGE_COLOR_HEX)
+        self.shoes_frame = tk.Frame(self.root, bg=BEIGE_COLOR_HEX)
+
+        # adding top
+        self.top_image_label = self.create_photo(self.tops_image_path, self.tops_frame)
+        self.top_image_label.pack(side=tk.TOP)
+
+        # adding bottom
+        self.bottom_image_label = self.create_photo(self.bottoms_image_path, self.bottoms_frame)
+        self.bottom_image_label.pack(side=tk.TOP)
+
+        # adding shoe
+        self.shoe_image_label = self.create_photo(self.shoes_image_path, self.shoes_frame)
+        self.shoe_image_label.pack(side=tk.TOP)
+
+        # create background
+        self.create_background()
+
 
 
 if __name__ == '__main__':

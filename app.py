@@ -97,6 +97,13 @@ class MyOutfitGenerator:
 
         return image_label
 
+    def update_photo(self, new_image, image_label):
+        new_image_file = Image.open(new_image)
+        image = new_image_file.resize((IMG_WIDTH, IMG_HEIGHT), Image.ANTIALIAS)
+        photo = ImageTk.PhotoImage(image)
+        image_label.configure(image=photo)
+        image_label.image = photo
+
 
 
 if __name__ == '__main__':

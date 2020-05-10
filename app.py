@@ -161,7 +161,16 @@ class MyOutfitGenerator:
         self._get_next_item(self.shoes_image_path, self.shoes_images, increment=True)
 
 
+    def create_outfit(self):
+        # randomly select an outfit
+        new_top_index = random.randint(0, len(self.top_images)-1)
+        new_bottom_index = random.randint(0, len(self.bottom_images)-1)
+        new_shoe_index = random.randint(0, len(self.shoes_images)-1)
 
+        # add the clothes onto the screen
+        self.update_photo(self.top_images[new_top_index], self.top_image_label)
+        self.update_photo(self.bottom_images[new_bottom_index], self.bottom_image_label)
+        self.update_photo(self.shoes_images[new_shoe_index], self.shoe_image_label)
 
 if __name__ == '__main__':
     root = tk.Tk()

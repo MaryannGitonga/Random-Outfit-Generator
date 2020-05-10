@@ -6,7 +6,7 @@ from PIL import Image, ImageTk
 from playsound import playsound
 
 WINDOW_TITLE = "My Random Outfit Generator "
-WINDOW_WIDTH = 500
+WINDOW_WIDTH = 400
 WINDOW_HEIGHT = 800
 IMG_HEIGHT = 200
 IMG_WIDTH = 200
@@ -70,9 +70,6 @@ class MyOutfitGenerator:
         top_prev_button = tk.Button(self.tops_frame, text="Prev", command=self.get_prev_top)
         top_prev_button.pack(side=tk.LEFT)
 
-        create_outfit_button = tk.Button(self.tops_frame, text="Create Outfit", command=self.create_outfit)
-        create_outfit_button.pack(side=tk.LEFT)
-
         top_next_button = tk.Button(self.tops_frame, text="Next", command=self.get_next_top)
         top_next_button.pack(side=tk.RIGHT)
 
@@ -84,6 +81,9 @@ class MyOutfitGenerator:
 
         shoe_prev_button = tk.Button(self.shoes_frame, text="Prev", command=self.get_prev_shoe)
         shoe_prev_button.pack(side=tk.LEFT)
+
+        create_outfit_button = tk.Button(self.shoes_frame, text="Create Outfit", command=self.create_outfit)
+        create_outfit_button.pack(side=tk.BOTTOM)
 
         shoe_next_button = tk.Button(self.shoes_frame, text="Next", command=self.get_next_shoe)
         shoe_next_button.pack(side=tk.RIGHT)

@@ -11,3 +11,11 @@ A Tkinter app that randomly generates an outfit. Inspired by TheComeUp on YouTub
 `pip3 install -r requirements.txt`
 * Run the app.py file:
 `python3 app.py`
+
+## Ongoing Tasks
+* Testing
+* Error handling
+* Add more features
+
+## Future Tasks
+* Deploy

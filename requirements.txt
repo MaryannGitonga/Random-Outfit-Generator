@@ -1,4 +1,4 @@
-Pillow==7.0.0
+Pillow==9.3.0
 playsound==1.2.2
 ruamel.yaml==0.16.10
 ruamel.yaml.clib==0.2.0
